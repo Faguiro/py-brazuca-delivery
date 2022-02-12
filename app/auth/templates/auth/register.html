@@ -1,0 +1,27 @@
+{% extends 'home/home.html' %}
+
+{% block inner_content %}
+<form method="post" class="form-register">
+
+{{ form.hidden_tag() }}
+
+{% for field in form if field.name not in ['csrf_token', 'submit'] -%}
+    <p> {{ field.label() }}
+    {% if field.errors %}
+        {{ field(class="invalid") }}
+        <span class="invalid-feedback">
+            {% for e in field.errors %}
+            {{ e }}
+            {% endfor %}
+        </span>
+    {% else %}
+        {{ field() }}
+    {% endif %}
+{% endfor %}
+
+<p> {{ form.submit() }} </p>
+</form>
+{% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+{% endblock inner_content %}

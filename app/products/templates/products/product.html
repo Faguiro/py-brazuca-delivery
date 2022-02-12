@@ -1,0 +1,40 @@
+{% extends 'home/home.html' %}
+
+
+{% block inner_content %}
+<div class="container bg-white" style="border-radius: 10px; padding-bottom: 20px;">
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    <div class="row d-flex justify-content-end">
+        <a href="#" class="btn-close" onclick="goBack()"></a>
+    </div>
+    <div class="row" style="padding-top: 10px">
+        <div class="col">
+            <img src="{{url_for('static', filename='images/products/' + product_category + '/' + product.photo_url)}}"
+                 class="card-img-top" alt="..." style="border-radius: 10px;">
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col-10"><h3>{{ product.name }}</h3></div>
+                <div class="col text-muted">{{ product.weight }} г</div>
+            </div>
+            {% if product.description %}
+                <div class="row"><p style="font-size: smaller;">{{ product.description }}</p></div>
+            {% endif %}
+            {% if product.composition %}
+                <div class="row"><h6>Состав</h6></div>
+                <div class="row"><p style="font-size: smaller;">{{ product.composition }}</p></div>
+            {% endif %}
+            <div class="row">
+                <div class="col-4">
+                  <a href="#" class="btn" style="border-radius: 50px;
+                                border-color: lightskyblue; background: lightskyblue;">+ {{ product.price }} &#8381;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock inner_content %}

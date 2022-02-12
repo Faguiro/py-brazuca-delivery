@@ -1,0 +1,42 @@
+{% extends 'home/home.html' %}
+
+
+{% block inner_content %}
+<div class="container bg-white" style="border-radius: 10px; padding-bottom: 20px;">
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    <div class="row d-flex justify-content-end">
+        <a href="#" class="btn-close" onclick="goBack()"></a>
+    </div>
+    <div class="row" style="padding-top: 10px">
+        <div class="col">Ваш заказ</div>
+        <div class="col">К оплате</div>
+    </div>
+    <div class="row" style="padding-top: 10px">
+        <div class="col">
+            {% for product in products_in_cart %}
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col">
+                        <img src="{{url_for('static',
+                                filename='images/products/' + product.product_category.slug + '/' + product.photo_url)}}" alt="..." style="height: 100px; width: 120px;">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            {{ product.price }} &#8381;
+                        </div>
+                        <div class="row">
+                            {{ product.weight }} г
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <h5>{{ price }} &#8381;</h5>
+        </div>
+    </div>
+</div>
+{% endblock inner_content %}

@@ -1,0 +1,35 @@
+{% extends 'home/home.html' %}
+
+
+{% block inner_content %}
+<div class="container bg-white" style="border-radius: 10px; padding-bottom: 20px;">
+    <div class="row" style="padding-top: 10px">
+        <a href="{{url_for('home.index')}}" >
+            <p> &#8656;	 Главная </p>
+        </a>
+    </div>
+    <div class="row ">
+        {% for prod in products %}
+            <div class="col-4" style="margin-top: 10px;">
+                    <div class="card h-100 border-0">
+                        <a href="{{url_for('.category_product', product_category=product_category, product=prod.slug)}}">
+                        <img src="{{url_for('static', filename='images/products/' + product_category + '/' + prod.photo_url)}}" class="card-img-top" alt="..." style="border-radius: 10px;">
+                        <div class="card-body bg-white d-flex align-items-center justify-content-center" style="height: 60px;">
+                            <h6 class="card-title" style="color:black;">{{ prod.name }}</h6>
+                        </div>
+                        </a>
+                        <div class="row bg-white">
+                            <div class="col d-flex justify-content-start align-items-center">
+                                {{ prod.weight }} г
+                            </div>
+                            <div class="col d-flex justify-content-end ">
+                                <a href="#" class="btn" style="border-radius: 50px;
+                                border-color: lightskyblue; background: lightskyblue;">+ {{ prod.price }} &#8381;</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock inner_content %}

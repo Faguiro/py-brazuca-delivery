@@ -1,0 +1,69 @@
+body {
+    background: #f3f3f5;
+}
+a {
+    text-decoration: none;
+
+}
+a:hover{
+    color: crimson;
+}
+.btn{
+    border: 2px solid red;
+}
+
+.carousel_info{
+    background: black;
+    opacity: 0.7;
+}
+
+.card-body{
+    background: grey;
+    text-align: center;
+}
+
+.carousel-item img{
+    border-radius: 20px;
+}
+
+.form-contact{margin-left: 20px;}
+.form-contact label {
+	display: inline-block;
+	min-width: 80px;
+}
+.form-contact p {margin: 10px 0 10px 0;}
+.form-contact input[type=submit], textarea {
+	font-size: 16px;
+}
+.form-contact .invalid {
+    background: #FF9898
+}
+.form-contact .invalid-feedback {
+    color: #CC0000
+}
+
+.form-register{margin-left: 20px;}
+.form-register label {
+	display: inline-block;
+	min-width: 140px;
+}
+.form-register p {margin: 10px 0 10px 0;}
+.form-register input[type=submit], textarea {
+	font-size: 16px;
+}
+.form-register .invalid {
+    background: #FF9898
+}
+.form-register .invalid-feedback {
+    color: #CC0000
+}
+
+.flash {padding: 10px;}
+.flash.success {
+	border: 1px solid #21DB56;
+	background: #AEFFC5;
+}
+.flash.error {
+	border: 1px solid #FF4343;
+	background: #FF9C9C;
+}
