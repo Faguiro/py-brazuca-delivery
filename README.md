@@ -1,4 +1,4 @@
-# Flask application: "Delivery food"
+# Flask application PY BRAZUCA DELIVERY
 
 The project is presented as a site for choosing products from categories, forming a basket and making an order.
 
@@ -56,7 +56,4 @@ runserver            Application Launch File (create application, register bluep
 ![api](https://i.ibb.co/jgyp05J/api.png)
 
 ### Contacts for communication
-
-* 8-916-191-51-85
-* malykuanov@mail.ru
-* @python_anywhere (TG)
+faguro2005@gmail.com
