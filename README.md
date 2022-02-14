@@ -56,4 +56,4 @@ runserver            Application Launch File (create application, register bluep
 ![api](https://i.ibb.co/jgyp05J/api.png)
 
 ### Contacts for communication
-faguro2005@gmail.com
+faguiro2005@gmail.com
